@@ -15,30 +15,3 @@ export const FetchAPI = async () => {
   }
 };
 
-export const fetchFirstDoseData = async () => {
-  try {
-    const { data } = await axios.get(url);
-
-    const firstDoseData = data.filter((round) => (
-      round.DOSE === "A"
-    ));
-
-    return firstDoseData;
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-export const fetchSecondDoseData = async () => {
-  try {
-    const { data } = await axios.get(url);
-
-    const secondDoseData = data.filter((round) => (
-      round.DOSE !== "A"
-    ));
-    
-    return secondDoseData;
-  } catch (error) {
-    console.log(error);
-  }
-};

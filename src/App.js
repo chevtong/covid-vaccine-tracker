@@ -11,16 +11,11 @@ import {
 
 function App() {
   const [data, setData] = useState([]);
-  const [firstDoseData, setFirstDoseData] = useState([]);
-  const [secondDoseData, setSecondDoseData] = useState([]);
-
-  const [category, setCategory] = useState("all")
+  const [category, setCategory] = useState("all");
 
   useEffect(() => {
     const fetching = async () => {
       setData(await FetchAPI());
-      setFirstDoseData(await fetchFirstDoseData());
-      setSecondDoseData(await fetchSecondDoseData());
     };
     fetching();
   }, []);
@@ -28,18 +23,11 @@ function App() {
   const reducer = (acc, cur) => {
     return acc + cur.COUNT;
   };
-  const totalVaccinatedPeople = data.reduce(reducer, 0);
 
   return (
     <div className="App">
       <h1>Vaccine Progress in Belgium</h1>
-      <TotalNumber
-        data={data}
-        firstDoseData={firstDoseData}
-        secondDoseData={secondDoseData}
-        totalVaccinatedPeople={totalVaccinatedPeople}
-        reducer={reducer}
-      />
+      <TotalNumber data={data} reducer={reducer} />
       <Selections setCategory={setCategory} />
       <Chart data={data} reducer={reducer} />
     </div>

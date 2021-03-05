@@ -2,7 +2,6 @@ import React from "react";
 import { Doughnut } from "react-chartjs-2";
 
 function Chart({ data, reducer }) {
-
   const getCityData = (city, dose) => {
     let cityArray = data.filter(
       (round) => round.REGION === city && round.DOSE === dose
@@ -17,15 +16,11 @@ function Chart({ data, reducer }) {
   const FlandersFirstDose = getCityData("Flanders", "A").reduce(reducer, 0);
   const FlandersSecondDose = getCityData("Flanders", "B").reduce(reducer, 0);
   const OstbelgienFirstDose = getCityData("Ostbelgien", "A").reduce(reducer, 0);
-  const OstbelgienSecondDose = getCityData("Ostbelgien", "B").reduce(reducer,0);
-
- 
+  const OstbelgienSecondDose = getCityData("Ostbelgien", "B").reduce(reducer, 0);
 
   const DoughnutChart = (color1, color2, firstDose, SecondDose, region) => {
     return (
-        
       <Doughnut
-        
         data={{
           labels: ["Dose 1", "Dose 2"],
           datasets: [
@@ -51,46 +46,45 @@ function Chart({ data, reducer }) {
 
   return (
     <div className="doughnut-chart-container">
-       <div className="doughnut-chart"> 
-            {DoughnutChart(
-                "#add2c9",
-                "#5ea3a3",
-                BrusselsFirstDose,
-                BrusselsSecondDose,
-                "Brussels"
-            )}
-        </div>
+      <div className="doughnut-chart">
+        {DoughnutChart(
+          "#add2c9",
+          "#5ea3a3",
+          BrusselsFirstDose,
+          BrusselsSecondDose,
+          "Brussels"
+        )}
+      </div>
 
-        <div className="doughnut-chart"> 
+      <div className="doughnut-chart">
+        {DoughnutChart(
+          "#e3dfc8",
+          "#96bb7c",
+          WallionaFirstDose,
+          WallionaSecondDose,
+          "Wallonia"
+        )}
+      </div>
 
-            {DoughnutChart(
-                "#e3dfc8",
-                "#96bb7c",
-                WallionaFirstDose,
-                WallionaSecondDose,
-                "Wallonia"
-            )}
-        </div>
+      <div className="doughnut-chart">
+        {DoughnutChart(
+          "#e3dfc8",
+          "#96bb7c",
+          FlandersFirstDose,
+          FlandersSecondDose,
+          "Flanders"
+        )}
+      </div>
 
-        <div className="doughnut-chart">
-            {DoughnutChart(
-                "#e3dfc8",
-                "#96bb7c",
-                FlandersFirstDose,
-                FlandersSecondDose,
-                "Flanders"
-            )}
-        </div>
-
-        <div className="doughnut-chart">
-            {DoughnutChart(
-                "#add2c9",
-                "#5ea3a3",
-                OstbelgienFirstDose,
-                OstbelgienSecondDose,
-                "Ostbelgien"
-            )}
-        </div>
+      <div className="doughnut-chart">
+        {DoughnutChart(
+          "#add2c9",
+          "#5ea3a3",
+          OstbelgienFirstDose,
+          OstbelgienSecondDose,
+          "Ostbelgien"
+        )}
+      </div>
     </div>
   );
 }
