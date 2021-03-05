@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Lora', serif;
+    background-color: #faf9f9;
+    color: #488b8f;
+}
+
+.container-totalNum{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+}
+.board{
+    box-shadow: rgba(	173	,210,	201, 0.5) 0px 2px 8px 0px;
+    margin: 1rem;
+    padding: 2rem;
+    height: 20vh;
+    display: grid;
+    align-content: space-around;
+}
+.count-up{
+    font-size: 2rem;
+}
+.doughnut-chart-container{
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+}
