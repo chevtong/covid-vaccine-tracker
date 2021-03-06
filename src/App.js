@@ -1,13 +1,11 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
 import Selections from "./components/Selections";
-import Chart from "./components/Chart";
+import RegionChart from "./components/RegionChart";
 import TotalNumber from "./components/TotalNumber";
-import {
-  FetchAPI,
-  fetchFirstDoseData,
-  fetchSecondDoseData,
-} from "./components/FetchAPI";
+import { FetchAPI } from "./components/FetchAPI";
+import AgeChart from "./components/AgeChart";
+import GenderChart from "./components/GenderChart";
 
 function App() {
   const [data, setData] = useState([]);
@@ -29,7 +27,16 @@ function App() {
       <h1>Vaccine Progress in Belgium</h1>
       <TotalNumber data={data} reducer={reducer} />
       <Selections setCategory={setCategory} />
-      <Chart data={data} reducer={reducer} />
+
+      {category === "region" ? (
+        <RegionChart data={data} reducer={reducer} />
+      ) : null}
+
+      {category === "age" ? <AgeChart data={data} reducer={reducer} /> : null}
+
+      {category === "gender" ? (
+        <GenderChart data={data} reducer={reducer} />
+      ) : null}
     </div>
   );
 }

@@ -1,8 +1,9 @@
 import React from 'react'
 
+
 function Selections({setCategory}) {
 
-
+    
 
 
     return (
@@ -12,7 +13,7 @@ function Selections({setCategory}) {
                 <option value="all">Shown By Catergories</option>
                 <option value="region">By Region</option>
                 <option  value="age">By Age</option>
-                <option  value="sex">By Gender</option>
+                <option  value="gender">By Gender</option>
             </select>
         </div>
     )
