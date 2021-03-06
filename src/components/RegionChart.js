@@ -23,9 +23,10 @@ function RegionChart({ data, reducer }) {
     return (
       <Doughnut
         data={{
+          labels: ["dose 1", "dose2"],
           datasets: [
             {
-              label: 'Vaccinated People',
+
               backgroundColor: [color1, color2],
               data: [firstDose, SecondDose],
             },
@@ -58,8 +59,8 @@ function RegionChart({ data, reducer }) {
 
       <div className="doughnut-chart">
         {DoughnutChart(
-          "#e3dfc8",
-          "#96bb7c",
+          "#BDE284",
+          "#84C77A",
           WallionaFirstDose,
           WallionaSecondDose,
           "Wallonia"
@@ -68,8 +69,8 @@ function RegionChart({ data, reducer }) {
 
       <div className="doughnut-chart">
         {DoughnutChart(
-          "#e3dfc8",
-          "#96bb7c",
+          "#BDE284",
+          "#84C77A",
           FlandersFirstDose,
           FlandersSecondDose,
           "Flanders"

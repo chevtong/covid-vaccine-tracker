@@ -1,25 +1,23 @@
-import React from 'react'
+import React from "react";
 import { Pie } from "react-chartjs-2";
 
+function GenderChart({ data, reducer }) {
+  const getGendereData = (gender) => {
+    let genderArray = data.filter((round) => round.SEX === gender);
+    return genderArray;
+  };
 
-function GenderChart({data, reducer}) {
+  const male = getGendereData("M").reduce(reducer, 0);
+  const female = getGendereData("F").reduce(reducer, 0);
 
-    const getGendereData = (gender) => {
-        let genderArray = data.filter((round) => round.SEX === gender);
-        return genderArray;
-      };
-
-    const male = getGendereData("M").reduce(reducer, 0);
-    const female = getGendereData("F").reduce(reducer, 0);
-    console.log(male, female)
-    return (
-        <div>
- <Pie
+  return (
+    <div className="gender-chart-container">
+      <Pie
         data={{
           labels: ["male", "female"],
           datasets: [
             {
-              backgroundColor: ['#488b8f', '#add2c9'],
+              backgroundColor: ["#85DAF9", "#BDE284"],
               data: [male, female],
             },
           ],
@@ -28,11 +26,12 @@ function GenderChart({data, reducer}) {
           legend: { display: true },
           title: {
             display: true,
-            text: `Total vaccinated population in different genders}`,
+            text: `Total vaccinated population in different genders`,
           },
         }}
-      />        </div>
-    )
+      />{" "}
+    </div>
+  );
 }
 
-export default GenderChart
+export default GenderChart;

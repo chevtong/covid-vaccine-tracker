@@ -17,7 +17,7 @@ function AgeChart({ data, reducer }) {
   const age85 = getAgeData("85+").reduce(reducer, 0);
 
   return (
-    <div>
+    <div className="age-chart-container">
       <Bar
         data={{
           labels: [
@@ -32,39 +32,52 @@ function AgeChart({ data, reducer }) {
           ],
           datasets: [
             {
-             
               label: "Vaccinated Population",
               backgroundColor: [
-                "#add2c9",
-                "#5ea3a3",
-                "#add2c9",
-                "#5ea3a3",
-                "#add2c9",
-                "#5ea3a3",
-                "#add2c9",
-                "#5ea3a3",
+                "#BDE284",
+                "#84C77A",
+                "#BDE284",
+                "#84C77A",
+                "#BDE284",
+                "#84C77A",
+                "#BDE284",
+                "#84C77A",
               ],
-              borderColor: [
-              "#5ea3a3",
-              "#add2c9",
-              "#5ea3a3",
-              "#add2c9",
-              "#5ea3a3",
-              "#add2c9",
-              "#5ea3a3", "#add2c9"],
+
               data: [age0, age18, age35, age45, age55, age65, age75, age85],
-              borderWidth: 2
+              borderWidth: 2,
             },
           ],
         }}
         options={{
-          animation: {display: true,duration: 2000},
+          animation: { display: true, duration: 2000 },
           legend: { display: false },
           title: {
             display: true,
             text: "Vaccinated Population According To Age Groups In Belgium",
           },
-      
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  // Include a dollar sign in the ticks
+                  callback: function (value, index, values) {
+                    return value + " persons";
+                  },
+                },
+              },
+            ],
+            xAxes: [
+              {
+                ticks: {
+                  // Include a dollar sign in the ticks
+                  callback: function (value, index, values) {
+                    return "Age " + value;
+                  },
+                },
+              },
+            ],
+          },
         }}
       />
     </div>
