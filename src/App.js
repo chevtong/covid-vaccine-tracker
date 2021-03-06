@@ -6,6 +6,7 @@ import TotalNumber from "./components/TotalNumber";
 import { FetchAPI } from "./components/FetchAPI";
 import AgeChart from "./components/AgeChart";
 import GenderChart from "./components/GenderChart";
+import DefaultChart from "./components/DefaultChart";
 
 function App() {
   const [data, setData] = useState([]);
@@ -27,6 +28,9 @@ function App() {
       <h1>Vaccine Progress in Belgium</h1>
       <TotalNumber data={data} reducer={reducer} />
       <Selections setCategory={setCategory} />
+      {category === "all" ? (
+        <DefaultChart data={data} reducer={reducer} />
+      ) : null}
 
       {category === "region" ? (
         <RegionChart data={data} reducer={reducer} />
