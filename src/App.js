@@ -22,14 +22,19 @@ function App() {
   const reducer = (acc, cur) => {
     return acc + cur.COUNT;
   };
+  const getDoseData = (dose) => {
+    let doseArray = data.filter((round) => round.DOSE === dose);
+    return doseArray;
+  };
+
 
   return (
     <div className="App">
       <h1>Vaccine Progress in Belgium</h1>
-      <TotalNumber data={data} reducer={reducer} />
+      <TotalNumber data={data} reducer={reducer} getDoseData={getDoseData}  />
       <Selections setCategory={setCategory} />
       {category === "all" ? (
-        <DefaultChart data={data} reducer={reducer} />
+        <DefaultChart data={data} getDoseData={getDoseData} />
       ) : null}
 
       {category === "region" ? (

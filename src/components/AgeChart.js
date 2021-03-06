@@ -58,7 +58,7 @@ function AgeChart({ data, reducer }) {
           ],
         }}
         options={{
-
+          animation: {display: true,duration: 2000},
           legend: { display: false },
           title: {
             display: true,

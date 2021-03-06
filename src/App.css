@@ -27,6 +27,10 @@ body{
 .count-up{
     font-size: 2rem;
 }
+.default-chart{
+    width: 80%;
+    margin: auto;
+}
 .doughnut-chart-container{
     display: grid;
     grid-template-columns: repeat(2, 50%);

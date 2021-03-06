@@ -1,12 +1,7 @@
 import React from "react";
 import CountUp from "react-countup";
 
-function TotalNumber({ data, reducer }) {
-
-  const getDoseData = (dose) => {
-    let doseArray = data.filter((round) => round.DOSE === dose);
-    return doseArray;
-  };
+function TotalNumber({ data,reducer, getDoseData}) {
 
   const FirstDosePeople = getDoseData("A").reduce(reducer, 0);
   const SecondDosePeople = getDoseData("B").reduce(reducer, 0);

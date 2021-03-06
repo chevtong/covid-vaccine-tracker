@@ -2,6 +2,7 @@ import React from "react";
 import { Doughnut } from "react-chartjs-2";
 
 function RegionChart({ data, reducer }) {
+
   const getCityData = (city, dose) => {
     let cityArray = data.filter(
       (round) => round.REGION === city && round.DOSE === dose
@@ -22,7 +23,6 @@ function RegionChart({ data, reducer }) {
     return (
       <Doughnut
         data={{
-          //labels: ["Dose 1", "Dose 2"],
           datasets: [
             {
               label: 'Vaccinated People',

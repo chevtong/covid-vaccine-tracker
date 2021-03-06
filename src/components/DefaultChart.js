@@ -2,47 +2,71 @@ import React from 'react'
 import { Line } from "react-chartjs-2";
 
 
-function DefaultChart({data, reducer}) {
-
-//     const dateArray = data.filter(
-//         (round) => round.REGION === city && round.DOSE === dose
-//       );
-//       return cityArray;
-
-//       const dateArray = Array.from(new Set(addresses.map(a => a.id)))
-//  .map(id => {
-//    return addresses.find(a => a.id === id)
-//  })
+function DefaultChart({data, getDoseData}) {
+    
+    const dateArray = data.map((round) => round.DATE)
+    const FirstDoseArray = getDoseData("A");
+    const SecondDoseArray = getDoseData("B");
 
     const removeDuplicate = (array) =>{
         return array.filter((value,index) => array.indexOf(value) === index)
     }
-let dateArray = data.map((round) => round.DATE)
 
-let uniqueDateArray = removeDuplicate(dateArray)
-console.log(uniqueDateArray)
-console.log(uniqueDateArray.map((date) => date))
+
+const getCountPerDay = (doseArray) =>{
+    const newArray = doseArray.reduce((acc, item) => ({
+        ...acc,
+        [item.DATE]: (acc[item.DATE] || 0) + item.COUNT
+      }) , {})
+
+      const countArray = Object.keys(newArray).map(key => ({date: key, count: newArray[key]}))
+
+      return countArray
+
+}
+
+
 
 
 
     return (
-        <div>
+        <div className="default-chart">
            <Line
             data={{
-                labels: [uniqueDateArray],
+                labels: removeDuplicate(dateArray),
                 datasets: [{
-                    data: [90, 6, 808, 89, 78],//dailyData.map(({confirmed}) => confirmed),
-                    label: "Infected",
-                    borderColor: '#3333ff', 
+                    data:getCountPerDay(FirstDoseArray).map((day) => (day.count)),
+                    label: "Dose 1",
+                    borderColor: '#5ea3a3', 
+                    backgroundColor: '#add2c9',
                     fill:true,
                 },{
-                    data: [90, 6, 808, 89, 78],//dailyData.map(({deaths}) => deaths),
-                    label: "deaths",
-                    borderColor: 'red', 
-                    backgroundColor: 'rgba(255, 0,0, 0.5)',
+                    data:getCountPerDay(SecondDoseArray).map((day) => (day.count)),
+                    label: "Dose 2",
+                    borderColor: '#404969', 
+                    backgroundColor: '#bde4f4',
                     fill:true
                 }]
             }}
+            options={{
+               // animation: {display: true,duration: 2000},
+                legend: { display: true },
+                title: {
+                  display: true,
+                  text: "Vaccinated People According To Dates",
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            // Include a dollar sign in the ticks
+                            callback: function(value, index, values) {
+                                return value + 'persons';
+                            }
+                        }
+                    }]
+                }
+            
+              }}
         />
         </div>
     )
