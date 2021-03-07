@@ -1,8 +1,8 @@
 # COVID Vaccine Tracker of Belgium :syringe: :syringe:
 
-Connected to the [Sciensano API]('https://epistat.wiv-isp.be/covid/') for the latest vaccination information in Belgium. Fetch the API and display the information through numbers and charts for visualizing the current vaccination progress. 
+Connected to the [Sciensano API](https://epistat.wiv-isp.be/covid/) for the latest vaccination information in Belgium. Fetch the API and display the information through numbers and charts for visualizing the current vaccination progress. 
 
-[Vaccine Tracker on Live]('https://chevtong.github.io/covid-vaccine-tracker/')
+[Vaccine Tracker on Live](https://chevtong.github.io/covid-vaccine-tracker/)
 
 
 <img src="tracker-demo.gif" width="50%"/>
@@ -21,10 +21,10 @@ Connected to the [Sciensano API]('https://epistat.wiv-isp.be/covid/') for the la
 ---
 ### Tools
 - React
-- [Sciensano API]('https://epistat.wiv-isp.be/covid/')
-- [react-chartjs-2]('https://github.com/reactchartjs/react-chartjs-2') for charts display
-- [axios]('https://www.npmjs.com/package/axios') for fretching API
-- [React CountUp]('https://www.npmjs.com/package/react-countup')
-- [Wave background generator]('https://getwaves.io/') for the background svg
-- [Illustration of Freepik Storyset]("https://storyset.com/people")
+- [Sciensano API](https://epistat.wiv-isp.be/covid/)
+- [react-chartjs-2](https://github.com/reactchartjs/react-chartjs-2) for charts display
+- [axios](https://www.npmjs.com/package/axios) for fretching API
+- [React CountUp](https://www.npmjs.com/package/react-countup)
+- [Wave background generator](https://getwaves.io/) for the background svg
+- [Illustration of Freepik Storyset](https://storyset.com/people)
 - VS Code
