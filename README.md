@@ -4,6 +4,8 @@ Connected to the [Sciensano API]('https://epistat.wiv-isp.be/covid/') for the la
 
 [Vaccine Tracker on Live]('')
 
+![Demo](tracker-demo.gif)
+
 <br>
 
 ---
