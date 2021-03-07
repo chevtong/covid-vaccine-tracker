@@ -9,7 +9,7 @@ function TotalNumber({ data,reducer, getDoseData}) {
   return data ? (
     <div className="container-totalNum">
       <div className="board overall">
-        <h2>Overall Vaccinated Population</h2>
+        <h3>Overall Vaccinated Population</h3>
         <CountUp
           className="count-up "
           start={0}
@@ -19,7 +19,7 @@ function TotalNumber({ data,reducer, getDoseData}) {
         />
       </div>
       <div className="board">
-        <h3>Population received first dose</h3>
+        <h4>Population received first dose</h4>
         <CountUp
           className="count-up"
           start={0}
@@ -29,7 +29,7 @@ function TotalNumber({ data,reducer, getDoseData}) {
         />
       </div>
       <div className="board">
-        <h3>Population received second dose</h3>
+        <h4>Population received second dose</h4>
         <CountUp
           className="count-up"
           start={0}

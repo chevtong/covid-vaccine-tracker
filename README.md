@@ -1,8 +1,8 @@
 # COVID Vaccine Tracker of Belgium :syringe: :syringe:
 
-Connected to the [Sciensano API]('https://epistat.wiv-isp.be/covid/') for the latest vaccination information in Belgium. Fetch the API and display the information through numbers and charts for visiualising the current vaccination progress. 
+Connected to the [Sciensano API]('https://epistat.wiv-isp.be/covid/') for the latest vaccination information in Belgium. Fetch the API and display the information through numbers and charts for visualizing the current vaccination progress. 
 
-[Vaccine Tracker on Live]('')
+[Vaccine Tracker on Live]('https://chevtong.github.io/covid-vaccine-tracker/')
 
 
 <img src="tracker-demo.gif" width="50%"/>
@@ -11,9 +11,10 @@ Connected to the [Sciensano API]('https://epistat.wiv-isp.be/covid/') for the la
 
 ---
 
+
 ## Objectives 
-- Get familar to work with different API data, extract and calculate the information according to the needs. 
-- Work in and to get used to React's structure.
+- Get familiar to work with different API data, extract and calculate the information according to the needs. 
+- Work in and get used to React's structure.
 
 <br>
 

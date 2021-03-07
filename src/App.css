@@ -8,7 +8,6 @@ body {
   background-color: #f0f9ff;
   color: #41a5ee;
 }
-
 img {
   width: 30vw;
 }
@@ -19,18 +18,18 @@ img {
   background-color: #276678;
   padding: 2.5rem 2.5rem 1rem 2.5rem;
   text-transform: uppercase;
-  font-size: 4rem;
+  font-size: 2.5rem;
   color: #f0f9ff;
   text-shadow: 2px 2px 2px #85daf9;
   margin-bottom: 1px;
 }
 .landing-container {
-  color: #85DAF9;
+  color: #85daf9;
   display: grid;
   grid-template-columns: 60% 40%;
   align-items: center;
   justify-items: center;
-  padding-top: 2rem;
+  padding: 2rem 4rem 1rem 4rem;
   background-color: #276678;
 }
 .container-totalNum {
@@ -41,9 +40,9 @@ img {
   grid-template-columns: repeat(2, 50%);
 }
 .board {
-  box-shadow: rgba(255, 255, 255, 0.5) 0px 2px 8px 0px;
+  box-shadow: rgba(136, 136, 136, 0.5) 0px 2px 8px 0px;
   border-radius: 5px;
-  margin: .5rem;
+  margin: 0.5rem;
   padding: 1rem;
   height: auto;
   display: grid;
@@ -54,7 +53,7 @@ img {
   text-align: center;
 }
 .count-up {
-  font-size: 3rem;
+  font-size: 2rem;
   color: #f0f9ff;
 }
 
@@ -99,49 +98,63 @@ select:focus {
   margin: auto;
 }
 
-@media (max-width: 768px){
-.board h3{
+/* media queries start here */
+@media (max-width: 768px) {
+  .board h3 {
     font-size: 1rem;
-}
-.count-up {
-  font-size: 1rem;
-}  
+  }
+  .count-up {
+    font-size: 1rem;
+  }
 }
 
-@media (max-width: 426px){
-    .landing-title{
-        font-size: 1.5rem;
-    }
-    img{
-        grid-row: 1/2;
-        width: 60%;
-    }
-    .landing-container {
-        grid-template-columns: 100%;
-      }
-      .default-chart,
-.age-chart-container {
-  padding: 2rem 0;
-  /* width: 95%;
-  margin: auto; */
-}
-.doughnut-chart {
+@media (max-width: 426px) {
+  .landing-title {
+    font-size: 1rem;
+    padding: 0.5rem;
+    text-shadow: 0.5px 0.5px#85daf9;
+  }
+  .landing-container {
+    padding: 1rem 0.5rem;
+  }
+  img {
+    grid-row: 1/2;
+    width: 60%;
+  }
+  .board h3 {
+    font-weight: normal;
+    font-size: 0.8rem;
+  }
+  .board h4 {
+    font-weight: normal;
+    font-size: 0.8rem;
+  }
+  .count-up {
+    font-size: 1rem;
+  }
+  .landing-container {
+    grid-template-columns: 100%;
+  }
+  .default-chart,
+  .age-chart-container {
+    padding: 2rem 0;
+  }
+  .doughnut-chart {
     padding: 0;
   }
   .doughnut-chart-container {
     padding: 2rem 0;
-  
     display: grid;
     grid-template-columns: 100%;
     justify-items: center;
   }
-  canvas.chartjs-render-monitor{
-      height: 95%;
-      width: 95%;
-      margin: auto;
+  canvas.chartjs-render-monitor {
+    height: 95%;
+    width: 95%;
+    margin: auto;
   }
-  .gender-chart-container{
-      width: 100%;
-      padding: 2rem 0;
+  .gender-chart-container {
+    width: 100%;
+    padding: 2rem 0;
   }
 }
