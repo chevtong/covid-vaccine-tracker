@@ -2,7 +2,7 @@
 
 Connected to the [Sciensano API](https://epistat.wiv-isp.be/covid/) for the latest vaccination information in Belgium. Fetch the API and display the information through numbers and charts for visualizing the current vaccination progress. 
 
-[Vaccine Tracker on Live](https://chevtong.github.io/covid-vaccine-tracker/)
+### [Vaccine Tracker on Live](https://chevtong.github.io/covid-vaccine-tracker/)
 
 
 <img src="tracker-demo.gif" width="50%"/>
